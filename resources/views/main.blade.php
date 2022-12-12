@@ -71,5 +71,32 @@
 <!-- ./wrapper -->
 
 @include('footer')
+<script src="{{ url('/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
+<script>
+  $('.xoa').click(function(event) {
+      //This will choose the closest form to the button
+      var form = $(this).closest("form");
+
+      //don't let the form submit yet
+      event.preventDefault();
+
+      //configure sweetalert alert as you wish
+      Swal.fire({
+        title: 'Bạn có muốn xóa?',
+        text: "Bạn sẽ không thể hoàn tác tác vụ này.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Đồng ý!',
+        cancelButtonText: "Huỷ bỏ!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          form.submit();
+        }
+      })
+
+    });
+</script>
 </body>
 </html>

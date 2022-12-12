@@ -23,7 +23,7 @@ class Administrator
         }
         else
         {
-            return redirect()->route('login');
+            return redirect()->route('home');
         }
         
     }

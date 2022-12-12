@@ -18,9 +18,11 @@
                       <i class="fab fa-angellist"></i> Duyệt
                     </a>
                     
-                          <a class="btn btn-danger btn-sm float-right " href="{{route('listpost_xoa',['id'=>$Tin->id])}}"
-                onclick="removeRow(' . $Tin->id . ')">
+                    <form action="{{route('listpost_xoa',['id'=>$Tin->id])}}" method="get">
+                  <button class="btn btn-danger btn-sm float-right xoa " type="submit">
                     <i class="fas fa-trash"></i>
+                  </button>
+                </form>
                     
                 </a>
     
